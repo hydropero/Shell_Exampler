@@ -1,7 +1,14 @@
 # Shell_Exampler
 
-## This program will show example of how to utilize any shell command. Simply execute the binary with the argument -c or --command_name as such
+## This program will show example of how to utilize any shell command. Simply run the program: <code>./shell_exampler</code> <code>-c</code> or <code>--command_name</code> as such
 
-shell_exampler -c grep
+<code>shell_exampler -c grep</code>
 
 You will be shown multiple examples of how the supplied command is to be used.
+
+Below is example output:
+<img src="https://github.com/hydropero/images/blob/main/shell_exampler_example.png?raw=true" width="900" title="hover text">
+
+<img src="https://github.com/hydropero/images/blob/main/shell_example_output_grep.png?raw=true" width="900" title="hover text">
+
+<img src="https://github.com/hydropero/images/blob/main/shell_example_output_man.png?raw=true" width="900" title="hover text">
