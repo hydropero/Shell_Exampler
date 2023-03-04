@@ -4,6 +4,8 @@
 
 Note the required python modules must be installed eg. <code>pip3 install rich</code> or use the compiled all-in-one binary instead (shell-exampler-bin)
 
+Props to Cheat.sh as this program is essentially a prettified wrapper of it.
+
 <code>shell_exampler -c grep</code>
 
 You will be shown multiple examples of how the supplied command is to be used.
