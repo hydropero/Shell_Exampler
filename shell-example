@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import requests
 import sys
 import getopt
@@ -41,22 +42,32 @@ def command_name():
 
           response = requests.request("GET", url, headers=headers, data=payload)
           tldr_text = escape_ansi(response.text).split("tldr:")[1]
+          tldr_text_line_formatting = tldr_text.split("\n\n#")
+          empty = ""
+          formatted_text = Text(empty)
+          for line in tldr_text_line_formatting:
+            if line[0] == " ":
+                line = line.strip() + "\n\n"
+                line = Text(line)
+                line.stylize("bold light_steel_blue")
+                formatted_text.append(line)
+            else:
+                line = line.strip() + "\n\n\n"
+                formatted_text.append(line)
+
           command_title = tldr_text.split("\n")[0]
-          command_title_text = Text(command_title)
-          command_title_text.stylize("bold blue")
+          command_title_text = Text(command_title.strip())
+          command_title_text.stylize("bold white u")
           command_title = Align.center(command_title_text, vertical="middle")
+          formatted_text = Align.center(formatted_text, vertical="middle")
           layout.split_column(
             Layout(name="upper"),
             Layout(name="lower")
           )
           layout["upper"].size = 11
           layout["upper"].update(Panel(command_title))
-          layout["lower"].update(Panel(tldr_text))
-#          layout["upper"].size=25
-#          layout["lower"].size=15
-#          layout["upper"].update(tldr_text)
+          layout["lower"].update(Panel(formatted_text))
           layout = Padding(layout, (4,0,0,0))
           print(layout)
 
 command_name()
-
