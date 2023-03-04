@@ -1,4 +1,4 @@
-# Shell_Exampler
+# shell-exampler
 
 ## This program will show example of how to utilize any shell command. Simply run the program: <code>./shell_exampler</code> <code>-c</code> or <code>--command_name</code> as such
 
